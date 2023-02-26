@@ -23,12 +23,14 @@ const ingredients = [
 // 2 вариант
 const list = document.querySelector("#ingredients");
 
-ingredients.forEach((ingredient) => {
+const ingredient = ingredients.map((el) => {
   const listItem = document.createElement("li");
   listItem.classList.add("item");
-  listItem.textContent = ingredient;
-  list.append(listItem);
+  listItem.textContent = el;
+  return listItem;
 });
+
+list.append(...ingredient);
 
 // 3 вариант
 // const list = document.querySelector("#ingredients");

@@ -27,9 +27,9 @@ console.log(`Number of categories: ${categories.length}`);
 // }
 
 categories.forEach((el) => {
-  const nameTitle = el.querySelector("h2").textContent;
-  const totalElements = el.querySelectorAll("li").length;
+  const nameTitle = el.firstElementChild.textContent;
+  const totalElements = el.lastElementChild;
+
   console.log(`Category: ${nameTitle}`);
-  console.log(`Elements: ${totalElements}`);
-  return;
+  console.log(`Elements: ${totalElements.childElementCount}`);
 });

@@ -27,10 +27,10 @@ const getText = document.querySelector("#validation-input");
 getText.addEventListener("blur", counter);
 
 function counter(event) {
-  if (event.currentTarget.value.length === parseInt(getText.dataset.length)) {
-    getText.classList.add("valid");
-  } else {
+  if (event.currentTarget.value.length !== parseInt(getText.dataset.length)) {
     getText.classList.add("invalid");
-    getText.classList.remove("valid");
+  } else {
+    getText.classList.add("valid");
+    getText.classList.remove("invalid");
   }
 }
